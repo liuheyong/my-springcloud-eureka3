@@ -1,0 +1,24 @@
+server:
+  port: 9030
+
+eureka:
+  instance:
+    hostname: eureka3
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka1:9010/eureka/,http://eureka2:9020/eureka/
+
+#日志
+log:
+  name: eureka3
+  base: /Users/wenyixicodedog/cloud_log_file
+logging:
+  config: classpath:logback-spring.xml
+
+logging.level.org.springframework.boot.autoconfigure: ERROR
+
+spring:
+  application:
+    name: eureka3
